@@ -21,10 +21,12 @@ HOMEBREW_DIR = '/usr/local/Cellar'
 
 if File.exists?(FINK_DIR)
   DARWIN_PORT_DIR = FINK_DIR
-elif File.exists?(HOMEBREW_DIR)
-  DARWIN_PORT_DIR = '/usr/local'     
-else
-  DARWIN_PORT_DIR = MACPORT_DIR
+else 
+  if File.exists?(HOMEBREW_DIR)
+    DARWIN_PORT_DIR = '/usr/local'     
+  else
+    DARWIN_PORT_DIR = MACPORT_DIR
+  end
 end
 
 if RUBY_PLATFORM =~ /darwin/

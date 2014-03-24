@@ -8,6 +8,7 @@
 #ifdef USE_PNG
 	#include <png.h>
         #include <zlib.h>
+        #include <string.h>
 #endif
 
 //=============================================================================
