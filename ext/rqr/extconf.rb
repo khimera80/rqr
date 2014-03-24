@@ -11,13 +11,16 @@
 =end
 require 'mkmf'
 require 'rbconfig'
-$libs = append_library($libs, "supc++")
+#$libs = append_library($libs, "supc++")
 
 FINK_DIR = '/sw'
 MACPORT_DIR = '/opt/local'
+HOMEBREW_DIR = '/usr/local/Cellar'
 
 if File.exists?(FINK_DIR)
   DARWIN_PORT_DIR = FINK_DIR
+elif File.exists?(HOMEBREW_DIR)
+  DARWIN_PORT_DIR = '/usr/local'     
 else
   DARWIN_PORT_DIR = MACPORT_DIR
 end
