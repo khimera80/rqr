@@ -11,7 +11,9 @@
 =end
 require 'mkmf'
 require 'rbconfig'
-#$libs = append_library($libs, "supc++")
+unless RUBY_PLATFORM =~ /darwin/
+  $libs = append_library($libs, "supc++")
+end
 
 FINK_DIR = '/sw'
 MACPORT_DIR = '/opt/local'
